@@ -82,6 +82,31 @@ Set<Set<char>> PowerSet(const Set<char>& s)
 	Set<Set<char>> result;
 	Set<char> check;
 	result.insertElement(check);
+    for(int i=0; i<s.cardinality(); i++) {
+        check.insertElement(s[i]);
+        result.insertElement(check);
+        check.removeElement(s[i]);
+    }
+    for(int i=0; i<s.cardinality(); i++) {
+        Set<char> temp;
+        temp.insertElement(s[i]);
+        for(int j=i+1; j<s.cardinality(); j++) {
+            temp.insertElement(s[j]);
+            result.insertElement(temp);
+            temp.removeElement(s[j]);
+        }
+    }
+    for(int i=0; i<s.cardinality() - 1; i++) {
+        Set<char> temp;
+        temp.insertElement(s[i]);
+        temp.insertElement(s[i+1]);
+        for(int j=i+2; j<s.cardinality(); j++) {
+            temp.insertElement(s[j]);
+            result.insertElement(temp);
+            temp.removeElement(s[j]);
+        }
+    }
+    result.insertElement(s);
 	return result;
 }
 
