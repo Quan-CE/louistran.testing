@@ -1,0 +1,7 @@
+﻿  Main.cpp
+  set.cpp
+  setFunctions.cpp
+  setFunctions.h
+  Generating Code...
+Debug\setFunctions.obj : warning LNK4042: object specified more than once; extras ignored
+  Sets.vcxproj -> C:\Users\lcole9\Downloads\Sets_VS\Sets_VS\Debug\Sets.exe
